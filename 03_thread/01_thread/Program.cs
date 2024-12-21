@@ -250,3 +250,67 @@
 //new Thread(Run).Start();
 
 #endregion
+
+#region TPL / Threads pooling
+
+// TPL (Task Parallel Library) -> Task, Task<TResult>, Parallel, ValueTask<T> ....
+// ThreadPool.QueueUserWorkItem
+// async delegates      // !!!! FOR .NET Framework ONLY !!!!
+// BackgroundWorker
+// .....
+
+
+//void Run()
+//{
+//    Thread.Sleep(1000);
+//    Console.WriteLine("Vasia");
+//}
+
+//Task task = Task.Factory.StartNew(Run);
+////task.Wait();
+//await task;
+
+//Console.WriteLine("END");
+
+
+
+
+//using System.Net;
+
+//string DownloadPageContent(string url)
+//{
+//    WebClient client = new WebClient();
+//    return client.DownloadString(url);
+//}
+
+//// Console.WriteLine(DownloadPageContent(@"https://google.com"));
+
+//string url = @"https://google.com";
+//Task<string> task = Task.Factory.StartNew(() => DownloadPageContent(url));
+
+//Console.ForegroundColor = ConsoleColor.Green;
+//Console.WriteLine("PAGE CONTENT: ");
+//Console.ResetColor();
+
+//string result = task.Result;        // BLOCKING !!!
+//Console.WriteLine(result);
+
+
+
+
+//void Run(object? obj)
+//{
+//    Thread.Sleep(2000);
+//    Console.WriteLine($"FROM THREAD POOL: {obj}");
+//}
+
+//ThreadPool.QueueUserWorkItem(Run, "Vasia");
+
+//Console.ReadLine();
+
+
+ThreadPool.GetMaxThreads(out int wt, out int cpt);
+Console.WriteLine(wt);
+Console.WriteLine(cpt);
+
+#endregion
